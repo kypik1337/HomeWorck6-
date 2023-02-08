@@ -14,7 +14,7 @@ public class seminar {
     public static void main(String[] params) {
         Set<Notebook> notebooks = initSet();
         Scanner scanner = new Scanner(System.in);
-        //Scanner scannerVal = new Scanner(System.in);
+        
 
         List<String> criteriesInteger = Arrays.asList("1","2","3");
         List<String> criteriesString = Arrays.asList("4","5");
@@ -61,7 +61,7 @@ public class seminar {
                         }
                     }
                 }
-                //
+                
                 printNotebooks(notebooks, filter);
             } else {
                 System.out.println();
@@ -99,12 +99,10 @@ public class seminar {
         for (String key: filter.keySet()) {
             String value = filter.get(key);
             if (value == null || value.trim().equals("")) continue;
-            //
             if (key.equals("1")) {
                 try {
                     int i = Integer.parseInt(value);
                     if (n.getRamSizeGb() >= i) {
-                        //ok
                     } else {
                         result = false;
                         break;
@@ -117,7 +115,6 @@ public class seminar {
                 try {
                     int i = Integer.parseInt(value);
                     if (n.getDiskSizeGb() >= i) {
-                        //ok
                     } else {
                         result = false;
                         break;
@@ -130,7 +127,6 @@ public class seminar {
                 try {
                     int i = Integer.parseInt(value);
                     if (n.getScreenSizeInch() >= i) {
-                        //ok
                     } else {
                         result = false;
                         break;
@@ -141,14 +137,12 @@ public class seminar {
                 }
             } else if (key.equals("4")) {
                 if (n.getColor().equalsIgnoreCase(value)) {
-                    //ok
                 } else {
                     result = false;
                     break;
                 }
             } else if (key.equals("5")) {
                 if (n.getOs().toUpperCase().contains(value.toUpperCase())) {
-                    //ok
                 } else {
                     result = false;
                     break;
@@ -164,7 +158,6 @@ public class seminar {
         String OS_LINUX_UBUNTU = "Linux ";
 
         Set<Notebook> set = new HashSet<Notebook>();
-        //
         set.add(new Notebook(
                 "W123456",
                 15,
